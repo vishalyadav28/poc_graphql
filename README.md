@@ -140,7 +140,7 @@ This is a simple Django project showcasing the implementation of a GraphQL API u
  }
 ```
 
-#4.
+4.
 
 ```
  {
