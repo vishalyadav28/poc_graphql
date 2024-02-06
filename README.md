@@ -140,7 +140,7 @@ This is a simple Django project showcasing the implementation of a GraphQL API u
  }
 ```
 
-4.
+# 4.
 
 ```
  {
@@ -171,3 +171,88 @@ This is a simple Django project showcasing the implementation of a GraphQL API u
    }
  }
  ```
+
+
+# Mutation example
+
+```
+create if not available else update
+
+mutation{
+  updateCategory(oldName: "new cat", newName:"updated cat"){
+    category{
+      id
+      name
+    }
+  }
+
+}
+
+# output
+
+{
+  "data": {
+    "updateCategory": {
+      "category": {
+        "id": "6",
+        "name": "updated cat 1"
+      }
+    }
+  }
+}
+
+
+
+```
+
+
+
+
+# 2 (update)
+
+mutation {
+  updateCategoryById(id: 5, name: "bla bla") {
+    category {
+      name
+    }
+  }
+}
+
+#output
+{
+  "data": {
+    "updateCategoryById": {
+      "category": {
+        "name": "bla bla"
+      }
+    }
+  }
+}
+
+
+
+# 3 delete
+
+mutation {
+  deleteCategoryById(id:5) {
+    category {
+      name
+    }
+  }
+}
+
+#output
+
+{
+  "data": {
+    "deleteCategoryById": {
+      "category": {
+        "name": "bla bla"
+      }
+    }
+  }
+}
+
+
+```
+
